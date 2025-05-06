@@ -41,33 +41,30 @@ Building the System
 Lunch your device after cloning all device sources if needed.
 
 ```bash
-lunch arrow_devicecodename-buildtype
+lunch arrow_<devicecodename>-<buildtype>
 ```
 
 Start compilation
 
 ```bash
-m otapackage
+m otapackage -j$(nproc --all)
 ```
 
 OR
 
 ```bash
-m bacon
+m bacon -j$(nproc --all)
 ```
 
-**You can also refer to our detailed guides as listed below:**
-
-[How to compile ArrowOS from source](https://blog.arrowos.net/android/arrowos/guides/compilation-guide)
-
-[How to submit patches to ArrowOS Gerrit](https://blog.arrowos.net/android/arrowos/guides/how-to-submit-patches-to-arrowos-gerrit)
-
-[Apply for Maintainership](https://blog.arrowos.net/android/arrowos/community/apply-for-maintainership) OR [Submit device for community builds](https://blog.arrowos.net/android/arrowos/news/introducing-community-builds)
-
-To check thread template refer [**HERE**](https://raw.githubusercontent.com/ArrowOS/documentation/master/thread_template.txt)
-
+Setup flags
 ---------------------------------------------------------------------------------------------------------------------
-
-[ArrowOS Website](https://www.arrowos.net) | [ArrowOS Blog](https://blog.arrowos.net)
-
+```
+# ArrowOS Flags
+TARGET_FACE_UNLOCK_SUPPORTED := true # For supported face unlock
+TARGET_SUPPORTS_BLUR := true # disable/enable blur support, default is false
+TARGET_SUPPORTS_QUICK_TAP := true # Quick Tap support
+TARGET_BOOT_ANIMATION_RES := 1080 # Set resolution for Boot Animation
+ARROW_MAINTAINER := your_name # Set maintainer name (Don't use special characters or space)
+TARGET_SUPPORT_BYPASS_CHARGE := true # Enable BypassCharge support by QS Tile, disable by default (Need kernel and sepolicy implementations)
+```
 ---------------------------------------------------------------------------------------------------------------------
