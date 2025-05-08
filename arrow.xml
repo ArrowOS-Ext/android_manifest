@@ -7,6 +7,12 @@
   <remote  name="gitlab"
            fetch="https://gitlab.com/" />
 
+  <remote  name="gitea"
+           fetch="https://gitea.com/" />
+
+  <remote  name="bitbucket"
+           fetch="https://bitbucket.org/" />
+
   <remote  name="arrow"
            fetch="https://github.com/ArrowOS"
            review="https://review.arrowos.net/"
@@ -186,6 +192,7 @@
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="arrow-ext" revision="refs/heads/arrow-13.2" />
 
   <!-- prebuilt repos -->
+  <project path="prebuilts/clang/host/linux-x86" name="arrowos-ext/android_prebuilts_clang_host_linux-x86" remote="bitbucket" revision="refs/heads/arrow-13.2" groups="pdk" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" clone-depth="1" remote="arrow-ext" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" clone-depth="1" remote="arrow-ext" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" revision="refs/tags/android-13.0.0_r0.85" />
